@@ -23,5 +23,5 @@ jobs:
       run: |
         curl -XPOST -u "${{secrets.USERNAME}}:${{secrets.API_KEY}}" \
         -H "Accept: application/vnd.github.everest-preview+json" \
-        -H "Content-Type: application/json" https://api.github.com/repos/suddrey-qut/app/actions/workflows/2245443/dispatches \
-        --data "{\"ref\": \"master\", \"inputs\": { \"remote\": \"$GITHUB_REPOSITORY\" } }"
+        -H "Content-Type: application/json" https://api.github.com/repos/suddrey-qut/docs-generator/actions/workflows/2272886/dispatches \
+        --data "{\"ref\": \"master\", \"inputs\": { \"remote\": \"$GITHUB_REPOSITORY\", \"path\": \"test/gavin\" } }"
