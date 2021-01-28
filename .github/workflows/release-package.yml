@@ -18,6 +18,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Build Release
+      env:
+        GITHUB_WORKSPACE: ${{ github.workspace }}
       uses: suddrey-qut/release-tools-ros@master
     
         
