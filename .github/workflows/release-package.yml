@@ -19,9 +19,7 @@ jobs:
       uses: suddrey-qut/setup-ros@master
       with:
         required-ros-distributions: noetic
-    - name: Install Build Tools
+    - name: Build Release
       uses: suddrey-qut/release-tools-ros@master
-    - name: Do Release
-      run: release
     
         
