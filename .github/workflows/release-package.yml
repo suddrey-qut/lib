@@ -9,7 +9,6 @@ jobs:
       matrix:
         os: [ubuntu-20.04]
         python-version: [3.8]
-        ros-distro: [noetic]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -19,10 +18,10 @@ jobs:
     - name: Install ROS
       uses: suddrey-qut/setup-ros@master
       with:
-        required-ros-distributions: ${{ matrix.ros-distro }}
+        required-ros-distributions: noetic
     - name: Build Release
       uses: suddrey-qut/release-tools-ros@master
       with:
-        ros-distro: ${{ matrix.ros-distro }}
+        ros-distro: noetic
     
         
