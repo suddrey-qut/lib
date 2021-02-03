@@ -25,7 +25,14 @@ jobs:
         required-ros-distributions: noetic
     - name: Build Release
       uses: suddrey-qut/release-tools-ros@master
+      id: build
       with:
         ros-distro: noetic
+    - name: Upload binaries to release
+      uses: suddrey-qut/upload-release-action@master
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        files: ${{ steps.build.files }}
+        tag: ${{ github.ref }}
     
         
