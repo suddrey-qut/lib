@@ -30,9 +30,16 @@ jobs:
         ros-distro: noetic      
     - name: Upload binaries to release
       uses: suddrey-qut/upload-release-action@master
+      id: upload
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         files: ${{ steps.build.outputs.files }}
         tag: ${{ github.ref }}
+    - name : Notify QCR
+      uses: suddrey-qut/invoke-qcr-hook@master
+      with:
+        ref: ${{ github.ref }}
+        repo: ${{ github.repository }}
+        files: ${{ steps.upload.outputs.browser_download_urls }}
     
         
